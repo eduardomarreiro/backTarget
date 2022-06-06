@@ -36,7 +36,7 @@ namespace TargetProject.Controllers
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Erro ao tentar recuperar pessoa. Erro {ex.Message}");
+                    $"Error trying to add a person. Error {ex.Message}");
             }
         }
 
@@ -52,7 +52,7 @@ namespace TargetProject.Controllers
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Erro ao tentar recuperar pessoas. Erro {ex.Message}");
+                    $"Error trying to retrieve people. Error {ex.Message}");
             }
         }
 
@@ -68,7 +68,7 @@ namespace TargetProject.Controllers
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Erro ao tentar recuperar pessoa. Erro {ex.Message}");
+                    $"Error trying to retrieve a person. Error {ex.Message}");
             }
         }
 
@@ -97,7 +97,7 @@ namespace TargetProject.Controllers
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Erro ao tentar atualizar pessoa. Erro {ex.Message}");
+                    $"Error trying to update person. Error {ex.Message}");
             }
             
         }
@@ -110,12 +110,12 @@ namespace TargetProject.Controllers
                 var personId = _repo.GetById(id);
                 if (personId == null) return NoContent();
                 _repo.Delete(personId);
-                return Ok("Pessoa deletada");
+                return Ok("Person deleted");
             }
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Erro ao tentar deletar pessoa. Erro {ex.Message}");
+                    $"Error trying to delete person. Error {ex.Message}");
             }
         }
     }
